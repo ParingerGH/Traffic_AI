@@ -1,0 +1,47 @@
+body {
+	background-color: #242322;
+	text-align: center;
+}
+
+button {
+	margin: 0 auto;
+	margin-top: 4%;
+	margin-bottom: 4%;
+	border-color: grey;
+	color: black;
+	border: none;
+
+}
+
+video {
+	margin: 0 auto;
+}
+
+progress {
+	margin: 0 auto;
+}
+
+label {
+	margin: 0 auto;
+}
+
+.RunButton {
+	margin: 0 auto;
+	height: 400;
+}
+
+.column {
+	float: left;
+	width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+  .row {
+	display: flex;
+  }
