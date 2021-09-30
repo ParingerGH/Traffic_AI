@@ -2,6 +2,6 @@ version: '2'
 
 services:
   ui:
-    build: .
+    build: ./server/
     ports:
       - 80:80
