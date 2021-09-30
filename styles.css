@@ -3,10 +3,19 @@ body {
 	text-align: center;
 }
 
+label {
+	margin: 0 auto;
+}
+
 button {
 	margin: 0 auto;
 	margin-top: 5%;
 	margin-bottom: 5%;
+}
+
+.run-button {
+	margin: 0 auto;
+	height: 400;
 }
 
 video {
@@ -15,15 +24,6 @@ video {
 
 progress {
 	margin: 0 auto;
-}
-
-label {
-	margin: 0 auto;
-}
-
-.run-button {
-	margin: 0 auto;
-	height: 400;
 }
 
 .column {
