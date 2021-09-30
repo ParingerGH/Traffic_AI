@@ -19,8 +19,8 @@ button {
 	margin-bottom: 5%;
 }
 
-button .run {
-	height: 400;
+button.run {
+	height: 100px;
 }
 
 video {
