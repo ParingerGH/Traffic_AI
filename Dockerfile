@@ -1,6 +1,2 @@
-FROM ubuntu:latest
-
-WORKDIR /usr/app/Traffic_AI/server/
-COPY . ./server/
-
-EXPOSE 8080
+FROM nginx:alpine
+COPY ./server/ /usr/share/nginx/html

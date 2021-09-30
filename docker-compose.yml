@@ -1,5 +1,7 @@
 version: '2'
 
 services:
-  cat_test:
+  ui:
     build: .
+    ports:
+      - 80:80
