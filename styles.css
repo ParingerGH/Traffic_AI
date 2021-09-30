@@ -5,11 +5,8 @@ body {
 
 button {
 	margin: 0 auto;
-	margin-top: 4%;
-	margin-bottom: 4%;
-	border-color: grey;
-	color: black;
-	border: none;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 video {
@@ -24,7 +21,7 @@ label {
 	margin: 0 auto;
 }
 
-.RunButton {
+.run-button {
 	margin: 0 auto;
 	height: 400;
 }
@@ -34,12 +31,12 @@ label {
 	width: 50%;
 }
 
+.row {
+	display: flex;
+}
+
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
-}
-
-.row {
-	display: flex;
 }
