@@ -1,6 +1,12 @@
-body {
-	background-color: #242322;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+html {
+	font-family: 'Inter', sans-serif;
 	text-align: center;
+}
+
+body {
+	background-color: lightgray;
 }
 
 label {
