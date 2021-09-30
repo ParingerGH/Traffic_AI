@@ -4,4 +4,4 @@ WORKDIR /classifier
 COPY . /classifier
 RUN pip install pillow
 
-ENTRYPOINT ["python","classifier.py" ]
+CMD [ "python","classifier.py" ]

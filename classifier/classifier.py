@@ -41,7 +41,6 @@ def model_load():
   model.add(Dense(len_classes, activation="softmax"))
   return model
 
-test_data = []
 
 len_classes = 62
 model = model_load()
@@ -49,15 +48,41 @@ model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accur
 
 model.load_weights('weights.h5')
 
-im = Image.open('testdata/31.jpg')
+print("---------------------------------------")
+print("Traffic AI v0.0")
+print("type 'exit' to exit ")
+print("---------------------------------------")
 
-r, g, b = im.split()
-im = Image.merge("RGB", (b, g, r))
-im = im.resize((30,30))
-im = np.array(im)
+# allows to input what image to classify from testdeta dir
 
-test_data.append(im)
-test_data = np.array(test_data)
-predictions = model.predict(test_data)
+# use "docker build -t test ." while in classifire directory
+# then "docker run -it --rm test" 
+# then u end using container type "docker rmi test" to delete image
+# wont work with "doker-compose up -d" 
+while(True):
 
-print(classes[predictions.argmax(axis=1)[0]])
+  test_data = []
+
+  user_input = input("What image do u want to classify?")
+
+  if user_input == 'exit':
+    break
+
+  try:
+    im = Image.open('testdata/'+user_input+'.jpg')
+  except:
+    print("No file with such name")
+    continue
+
+
+  r, g, b = im.split()
+  im = Image.merge("RGB", (b, g, r))
+  im = im.resize((30,30))
+  im = np.array(im)
+
+  test_data.append(im)
+  test_data = np.array(test_data)
+  predictions = model.predict(test_data)
+
+  print(classes[predictions.argmax(axis=1)[0]])
+

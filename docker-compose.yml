@@ -1,7 +1,9 @@
 services:
   ui:
+    container_name: traffic_ai_ui 
     build: ./server/
     ports:
       - 8080:8080
   core:
+    container_name: traffic_ai_core
     build: ./classifier/
