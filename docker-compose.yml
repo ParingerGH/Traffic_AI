@@ -1,7 +1,7 @@
-version: '2'
-
 services:
   ui:
     build: ./server/
     ports:
-      - 80:80
+      - 8080:8080
+  core:
+    build: ./classifier/
