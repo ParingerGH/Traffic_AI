@@ -2,6 +2,6 @@ FROM tensorflow/tensorflow:latest
 
 WORKDIR /classifier
 COPY . /classifier
-RUN pip install pillow
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD [ "python","classifier.py" ]
