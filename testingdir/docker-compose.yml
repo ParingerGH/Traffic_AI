@@ -1,0 +1,5 @@
+services:
+  ubuntu_test_service:
+    build: .
+    volumes:
+      - .:/workdir
