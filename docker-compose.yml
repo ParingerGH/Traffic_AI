@@ -3,7 +3,7 @@ services:
     container_name: traffic_ai_ui 
     build: ./server/
     ports:
-      - 8000:8000
+      - 8001:8000
   core:
     container_name: traffic_ai_core
     build: ./classifier/
