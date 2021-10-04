@@ -10,7 +10,7 @@ classes.sort()
 
 classes_length = len(classes)
 
-def model_load():
+def load_model():
   model = Sequential()
 
   model.add(Conv2D(filters=32, kernel_size=(5, 5), activation='relu', input_shape=(30, 30, 3)))
@@ -22,7 +22,7 @@ def model_load():
   model.add(Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
   model.add(MaxPool2D(pool_size=(2, 2)))
   model.add(Dropout(rate=0.25))
-  
+
   model.add(Flatten())
 
   model.add(Dense(256, activation='relu'))
@@ -32,7 +32,7 @@ def model_load():
 
   return model
 
-model = model_load()
+model = load_model()
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.load_weights('weights.h5')
 
