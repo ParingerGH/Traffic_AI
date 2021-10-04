@@ -4,4 +4,4 @@ WORKDIR /classifier
 COPY . /classifier
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD [ "python","classifier.py" ]
+CMD [ "python", "classifier.py" ]
