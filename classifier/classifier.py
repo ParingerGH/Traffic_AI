@@ -66,4 +66,4 @@ while(True):
 # docker build -t test .
 # docker run -it --rm test
 # docker rmi test
-# doker-compose up -d
+# docker-compose up -d
