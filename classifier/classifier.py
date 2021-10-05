@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 from PIL import Image
 
@@ -36,18 +37,16 @@ model = load_model()
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.load_weights('weights.h5')
 
-print('Traffic AI v1.0')
-print("Type 'exit' to exit...\n")
-
 while(True):
   data = []
-  input = input('Which image do you want to classify? ')
+  user_input = sys.argv[1]
+  #user_input = input('Which image do you want to classify? ')
 
-  if input == 'exit':
+  if user_input == 'exit':
     break
 
   try:
-    image = Image.open('test_data/' + input + '.jpg')
+    image = Image.open('test_data/' + user_input + '.jpg')
   except:
     print('No such file...')
     continue
@@ -62,6 +61,8 @@ while(True):
   predictions = model.predict(data)
 
   print(classes[predictions.argmax(axis=1)[0]])
+
+  break
 
 # docker build -t test .
 # docker run -it --rm test

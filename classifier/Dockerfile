@@ -4,4 +4,5 @@ WORKDIR /classifier
 COPY . /classifier
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD [ "python", "classifier.py" ]
+# uncomment to use wiout "-it" 
+#CMD [ "bash", "script.sh" ]

@@ -4,6 +4,15 @@ services:
     build: ./server/
     ports:
       - 80:80
+    volumes:
+      - applicationdata:/usr/share/nginx/html/applicationdata
+    links:
+      - "core:ai"
   core:
     container_name: traffic_ai_core
     build: ./classifier/
+    volumes:
+      - applicationdata:/classifier/applicationdata
+
+volumes:
+  applicationdata:
