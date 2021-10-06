@@ -1,4 +1,4 @@
-
+const download = require('downloadjs');
 
 document.querySelector("#myFileInput").addEventListener("change", function () {
     const reader = new FileReader()

@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express');
-// const download = require('downloadjs');
 
 const PORT = 80;
 const HOST = '0.0.0.0';
