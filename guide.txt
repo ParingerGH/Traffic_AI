@@ -1,5 +1,5 @@
 docker build -t test .
-docker run -it --rm -v applicationdata:/classifier/applicationdata test
+docker run -it --rm -v traffic_ai_applicationdata:/classifier/applicationdata test
 bash script.sh
 exit
 docker rmi test

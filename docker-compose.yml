@@ -11,6 +11,7 @@ services:
   core:
     container_name: traffic_ai_core
     build: ./classifier/
+    command: bash script.sh
     volumes:
       - applicationdata:/classifier/applicationdata
 
