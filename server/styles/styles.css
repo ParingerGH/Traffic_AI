@@ -6,9 +6,10 @@
 }
 
 .swal-wide {
-	width: 850px !important;
-	text-align: justify;
+	width: 750px !important;
+	text-align: center;
 }
+
 
 body {
 	background-color: lightgray;
