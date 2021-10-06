@@ -1,5 +1,13 @@
-docker build -t test .
-docker run -it --rm -v traffic_ai_applicationdata:/classifier/applicationdata test
-bash script.sh
-exit
-docker rmi test
+Запустить докер
+
+1) 2 контейнера
+    docker-compose up -d
+
+2) отладка core (там где питон код)
+    cd ./classifier/
+    docker build -t test .
+    docker run -it --rm -v traffic_ai_applicationdata:/classifier/applicationdata test
+
+    после отладки
+
+    docker rmi test
