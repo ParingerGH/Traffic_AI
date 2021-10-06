@@ -1,8 +1,0 @@
-services:
-  ubuntu_test_service:
-    build: .
-    volumes:
-      - applicationdata:/workdir/volumedata
-
-volumes:
-  - applicationdata

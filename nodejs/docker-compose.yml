@@ -1,0 +1,11 @@
+services:
+  ui:
+    container_name: traffic_ai_ui 
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - application_data:/usr/src/app/application_data
+
+volumes:
+  application_data:

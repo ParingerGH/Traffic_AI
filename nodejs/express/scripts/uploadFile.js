@@ -28,5 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getPicture() {
     alert(localStorage.getItem('sign-image'))
-    download(localStorage.getItem('sign-image'), "/usr/share/nginx/html/applicationdata/out111.png", image/png);
+    download(localStorage.getItem('sign-image'), "/usr/src/app/application_data/out.png", image/png);
 }
