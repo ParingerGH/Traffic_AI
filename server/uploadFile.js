@@ -1,5 +1,19 @@
-var data = new FormData();
-data.append("upfile", new Blob(["CONTENT"], {type: "text/plain"}));
-var xhr = new XMLHttpRequest();
-xhr.open("POST", "SERVER.SCRIPT");
-xhr.send(data);
+document.querySelector("#myFileInput").addEventListener("change", function () {
+    const reader = new FileReader()
+
+    reader.addEventListener("load", () => {
+        localStorage.setItem("sign-image", reader.result)
+        console.log(reader.result)
+    })
+
+    reader.readAsDataURL(this.files[0]) // add loop for a few files
+
+    console.log(this.files)
+})
+document.addEventListener("DOMContentLoaded", () => {
+    const recentImageDataUrl = localStorage.getItem("sign-image")
+
+    if (recentImageDataUrl) {
+        document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl)
+    }
+})
