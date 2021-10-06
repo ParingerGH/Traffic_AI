@@ -17,3 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl)
     }
 })
+
+function getPicture() {
+    alert(localStorage.getItem('sign-image') )
+}
