@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - applicationdata:/usr/share/nginx/html/applicationdata
+      - applicationdata:/usr/src/app/applicationdata
     links:
       - "core:ai"
   core:
