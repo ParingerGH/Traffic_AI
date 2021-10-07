@@ -1,7 +1,7 @@
 services:
   ui:
     container_name: traffic_ai_ui 
-    build: ./server/
+    build: ./nodejs/
     ports:
       - 80:80
     volumes:
