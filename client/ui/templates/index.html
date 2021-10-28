@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Traffic AI</title>
-    <link rel="stylesheet" href="styles/styles.css">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 
     <style type="text/css">
         .swal-wide {
@@ -17,9 +19,13 @@
 <body>
     <h1>Traffic AI</h1>
 
-    <button onclick="modelinfo()">Информация о модели</button>
+    
+    
+    <form method="post" action="/classify/">{% csrf_token %}
 
-    <script src="./script.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <button>Классифицировать</button>
+
+    </form>
+
 
 </body>

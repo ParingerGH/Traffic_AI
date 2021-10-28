@@ -1,19 +1,26 @@
+version: "3.9"
+
 services:
-  ui:
+
+  client:
     container_name: traffic_ai_ui 
-    build: ./nodejs/
+    build: ./client/
+    command: python manage.py runserver 0.0.0.0:8000
     ports:
-      - 80:80
+      - 8000:8000
     volumes:
-      - applicationdata:/usr/src/app/applicationdata
-    links:
-      - "core:ai"
-  core:
+      - applicationdata:/code/applicationdata
+    depends_on:
+      - server
+  
+  server:
     container_name: traffic_ai_core
-    build: ./classifier/
-    command: bash script.sh
+    build: ./server/
+    ports:
+      - 9090:9090
     volumes:
-      - applicationdata:/classifier/applicationdata
+      - applicationdata:/server/applicationdata
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
 
 volumes:
   applicationdata:
