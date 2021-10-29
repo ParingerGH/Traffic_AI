@@ -18,6 +18,8 @@ def classify(request):
 
     testsock.send(b'???')
 
+    #while True:
+
     ##connection.sock.send(b'???')
 
     print('---CLASSIFICATION----')
