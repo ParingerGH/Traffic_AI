@@ -16,7 +16,3 @@ class SingletonConnection():
     def __init__(self):
         self.sock = socket.socket()
         self.sock.connect(('172.17.0.1', 9090))
-
-
-
-    
