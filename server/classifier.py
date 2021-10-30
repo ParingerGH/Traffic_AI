@@ -1,7 +1,8 @@
 import numpy as np
 import sys
-
+import os
 from PIL import Image
+import pandas as pd
 
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPool2D, Flatten, Dropout, Dense
@@ -37,34 +38,37 @@ model = load_model()
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.load_weights('weights.h5')
 
-while(True):
-  data = []
-  user_input = sys.argv[1]
-  #user_input = input('Which image do you want to classify? ')
 
-  if user_input == 'exit':
-    break
+home_path = './Hostdata'
+dir = [ ]
+for file in os.listdir(home_path):
+    if file.endswith(".jpg"):
+      dir.append(file)
 
-  try:
-    image = Image.open('test_data/' + user_input + '.jpg')
-  except:
-    print('No such file...')
-    continue
 
-  r, g, b = image.split()
-  image = Image.merge('RGB', (b, g, r))
-  image = image.resize((30, 30))
-  image = np.array(image)
 
-  data.append(image)
-  data = np.array(data)
-  predictions = model.predict(data)
+pred= []
+for el in dir:
+  test_data = []
+  im = Image.open(home_path+'/'+el)
 
-  print(classes[predictions.argmax(axis=1)[0]])
+  r, g, b = im.split()
+  im = Image.merge("RGB", (b, g, r))
 
-  break
+  im = im.resize((30,30))
+  im = np.array(im)
+  test_data.append(im)
 
-# docker build -t test .
-# docker run -it --rm test
-# docker rmi test
-# docker-compose up -d
+  test_data = np.array(test_data)
+
+  predictions = model.predict(test_data)
+  
+  if predictions.max()*100<50:
+    #shutil.move(home_path+'/'+el, path_out+'/'+'hz/')
+    pred.append('hz')
+  else:
+    pred.append(classes[predictions.argmax(axis=1)[0]])
+
+d= {'name':dir,'class':pred}
+df = pd.DataFrame(data= d)
+df.to_csv(f'{home_path}/pred_classes.csv')
