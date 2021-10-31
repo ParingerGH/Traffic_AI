@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.7"
 
 services:
 
@@ -10,6 +10,7 @@ services:
       - 8000:8000
     volumes:
       - applicationdata:/code/applicationdata
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER_CLIENT}
     depends_on:
       - server
   
@@ -20,7 +21,7 @@ services:
       - 9090:9090
     volumes:
       - applicationdata:/server/applicationdata
-      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER_SERVER}
 
 volumes:
   applicationdata:
