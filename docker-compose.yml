@@ -9,7 +9,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - applicationdata:/code/applicationdata
+      - applicationdata:/applicationdata
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER_CLIENT}
     depends_on:
       - server
