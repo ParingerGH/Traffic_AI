@@ -13,5 +13,6 @@ def classify(request):
     
     connection = socket_connetion.SingletonConnection()
     connection.sock.send(b'???')
+    print('Request classif')
 
     return render(request,'index.html')

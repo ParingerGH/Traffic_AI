@@ -11,6 +11,7 @@ while True:
     if data:
         
         if data == b'???':
+            print('Start classif')
             subprocess.run(["bash","test_script.sh"])
        
 conn.close()
