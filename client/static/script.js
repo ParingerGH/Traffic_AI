@@ -10,5 +10,5 @@
 function readTextFile() {
   $.get('/applicationdata/model.txt', function (result) {
     $(".modal-body").append(result);
-  });
+  }, 'text');
 }
