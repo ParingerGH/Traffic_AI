@@ -9,7 +9,7 @@
 
 function readTextFile() {
   var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", 'applicationdata/model.txt', false);
+  rawFile.open("GET", '/applicationdata/model.txt', false);
   rawFile.onreadystatechange = function () {
     if (rawFile.readyState === 4) {
       if (rawFile.status === 200 || rawFile.status == 0) {
