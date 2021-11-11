@@ -8,16 +8,7 @@
 // }
 
 function readTextFile() {
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", '/applicationdata/model.txt', false);
-  rawFile.onreadystatechange = function () {
-    if (rawFile.readyState === 4) {
-      if (rawFile.status === 200 || rawFile.status == 0) {
-        var allText = rawFile.responseText;
-        // alert(allText);
-        $(".modal-body").append(allText);
-      }
-    }
-  }
-  rawFile.send(null);
+  $.get('/applicationdata/model.txt', function (result) {
+    $(".modal-body").append(result);
+  });
 }
